@@ -1,0 +1,1 @@
+"""Templates entry point."""
