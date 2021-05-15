@@ -1,4 +1,11 @@
-.navbar {
-    height: 80px;
-    padding-left: 80px;
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-brand {
+    font-size: clamp(1em, 5vw, 2.5em);
+}
+
+#navbarSupportedContent {
+    text-align: center;
 }
