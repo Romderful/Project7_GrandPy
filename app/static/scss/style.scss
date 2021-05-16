@@ -1,0 +1,13 @@
+@import "../node_modules/rfs/scss";
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+  
+#navbarSupportedContent {
+    text-align: center;
+}
+
+.navbar-brand {
+    @include font-size(2rem);
+}

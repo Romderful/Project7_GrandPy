@@ -1,11 +1,27 @@
-body {
-    font-family: 'Montserrat', sans-serif;
+.title {
+  font-size: calc(1.525rem + 3.3vw);
+}
+@media (min-width: 1200px) {
+  .title {
+    font-size: 4rem;
+  }
 }
 
-.navbar-brand {
-    font-size: clamp(1em, 5vw, 2.5em);
+body {
+  font-family: "Montserrat", sans-serif;
 }
 
 #navbarSupportedContent {
-    text-align: center;
+  text-align: center;
 }
+
+.navbar-brand {
+  font-size: calc(1.325rem + 0.9vw);
+}
+@media (min-width: 1200px) {
+  .navbar-brand {
+    font-size: 2rem;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
