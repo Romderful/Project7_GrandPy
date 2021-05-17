@@ -3,11 +3,19 @@
 body {
     font-family: 'Montserrat', sans-serif;
 }
-  
+
 #navbarSupportedContent {
     text-align: center;
 }
 
 .navbar-brand {
     @include font-size(2rem);
+}
+
+.footerIcons{
+    text-align: center;
+}
+
+.fbBtn {
+    margin: 4px;
 }
