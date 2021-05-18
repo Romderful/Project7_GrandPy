@@ -1,8 +1,12 @@
-body {
-  font-family: "Montserrat", sans-serif;
+html {
+  height: 100%;
+  display: grid;
+  place-items: center;
 }
 
-#navbarSupportedContent {
+body {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
   text-align: center;
 }
 
@@ -15,11 +19,28 @@ body {
   }
 }
 
-.footerIcons {
+#aboutMe {
   text-align: center;
 }
 
-.fbBtn {
+#myName {
+  font-size: calc(1.285rem + 0.42vw);
+}
+@media (min-width: 1200px) {
+  #myName {
+    font-size: 1.6rem;
+  }
+}
+
+#myDescription {
+  font-size: 1.2rem;
+}
+
+#footerIcons {
+  text-align: center;
+}
+
+#facebookButton {
   margin: 4px;
 }
 
