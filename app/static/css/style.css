@@ -6,8 +6,6 @@ html {
 
 body {
   font-family: "Montserrat", sans-serif;
-  width: 100%;
-  text-align: center;
 }
 
 .navbar-brand {
@@ -19,8 +17,8 @@ body {
   }
 }
 
-#aboutMe {
-  text-align: center;
+.jumbotron {
+  margin: 4px;
 }
 
 #myName {
@@ -34,6 +32,14 @@ body {
 
 #myDescription {
   font-size: 1.2rem;
+}
+
+#myQuote {
+  font-size: 1rem;
+}
+
+#aboutMe {
+  text-align: center;
 }
 
 #footerIcons {

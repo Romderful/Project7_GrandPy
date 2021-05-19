@@ -8,18 +8,15 @@ html {
 
 body {
     font-family: 'Montserrat', sans-serif;
-    width: 100%;
-    text-align: center;
 }
 
 .navbar-brand {
     @include font-size(2rem);
 }
 
-#aboutMe {
-    text-align: center;
+.jumbotron {
+    margin: 4px;
 }
-
 
 #myName {
     @include font-size(1.6rem);
@@ -27,6 +24,14 @@ body {
 
 #myDescription {
     @include font-size(1.2rem);
+}
+
+#myQuote {
+    @include font-size(1rem);
+}
+
+#aboutMe {
+    text-align: center;
 }
 
 #footerIcons{
