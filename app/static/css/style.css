@@ -14,6 +14,19 @@ html, body {
   margin-bottom: 130px;
 }
 
+.myTitle {
+  font-size: calc(1.295rem + 0.54vw);
+}
+@media (min-width: 1200px) {
+  .myTitle {
+    font-size: 1.7rem;
+  }
+}
+
+.myText {
+  font-size: 1rem;
+}
+
 .navbar-brand {
   font-size: calc(1.325rem + 0.9vw);
 }
@@ -23,43 +36,30 @@ html, body {
   }
 }
 
-#myName {
-  font-size: calc(1.285rem + 0.42vw);
-}
-@media (min-width: 1200px) {
-  #myName {
-    font-size: 1.6rem;
-  }
-}
-
-#myDescription {
-  font-size: 1.2rem;
-}
-
-#myQuote {
+.myQuote {
   font-size: 1rem;
   margin-top: 100px;
 }
 
-#chatBox {
+.chatBox {
   max-width: 700px;
   margin-bottom: 130px;
 }
 
-#displayText {
+.displayText {
   height: 300px;
   overflow: auto;
 }
 
-#aboutMe {
+.aboutMe {
   text-align: center;
 }
 
-#footerIcons {
+.footerIcons {
   text-align: center;
 }
 
-#facebookButton {
+.facebookButton {
   margin: 4px;
 }
 

@@ -16,41 +16,41 @@ html, body {
     margin-bottom: 130px;
 }
 
+.myTitle {
+    @include font-size(1.7rem);
+}
+
+.myText {
+    @include font-size(1rem);
+}
+
 .navbar-brand {
     @include font-size(2rem);
 }
 
-#myName {
-    @include font-size(1.6rem);
-}
-
-#myDescription {
-    @include font-size(1.2rem);
-}
-
-#myQuote {
+.myQuote {
     @include font-size(1rem);
     margin-top: 100px;
 }
 
-#chatBox {
+.chatBox {
     max-width: 700px;
     margin-bottom: 130px;
 }
 
-#displayText {
+.displayText {
     height: 300px;
     overflow: auto;
 }
 
-#aboutMe {
+.aboutMe {
     text-align: center;
 }
 
-#footerIcons{
+.footerIcons{
     text-align: center;
 }
 
-#facebookButton {
+.facebookButton {
     margin: 4px;
 }
