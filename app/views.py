@@ -2,7 +2,7 @@
 
 
 from . import app
-from flask.templating import render_template
+from flask import render_template, jsonify
 
 
 @app.route("/")
@@ -15,3 +15,9 @@ def index():
 def about():
     """Return the about file."""
     return render_template("about.html")
+
+
+@app.route("/process", methods=["POST"])
+def process():
+    """Ajax request."""
+    return jsonify(["pas de reponse"])
