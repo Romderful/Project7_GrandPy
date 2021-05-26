@@ -2,7 +2,8 @@
 
 
 from . import app
-from flask import render_template, jsonify
+from flask import render_template, jsonify, request
+from .parser import Parser
 
 
 @app.route("/")
@@ -20,4 +21,7 @@ def about():
 @app.route("/process", methods=["POST"])
 def process():
     """Ajax request."""
+    user_text = request.form["data"]
+    response = Parser.parse(user_text)
+    print(response)
     return jsonify(["pas de reponse"])

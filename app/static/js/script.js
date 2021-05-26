@@ -1,15 +1,19 @@
-const userInput = $("#userInput")
+const userInput = $("#userInput");
+const chatZone = $("#chatZone");
 
-$(userInput).keypress(function (event) {
+$("form").keypress(function (event) {
     if (event.keyCode === 13) {
-        sendAjax();
+        const text = userInput.val();
+        chatZone.append(`<p>${text}</p>`);
+        userInput.val("");
+        sendAjax(text);
     };
 });
 
-function sendAjax() {
+function sendAjax(text) {
     $.ajax({
         method: "POST",
         url: "/process",
-        data: userInput
+        data: { data: text }
     })
 };
