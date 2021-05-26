@@ -24,4 +24,4 @@ def process():
     user_text = request.form["data"]
     response = Parser.parse(user_text)
     print(response)
-    return jsonify(["pas de reponse"])
+    return jsonify()
