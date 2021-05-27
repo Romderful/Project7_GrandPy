@@ -1,1 +1,1 @@
-"""Tests entry point."""
+"""Pytest package."""

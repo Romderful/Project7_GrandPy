@@ -10,7 +10,7 @@ class Parser:
 
     @staticmethod
     def parse(sentence):
-        """Parse the words."""
+        """Parse the sentence using regex lib."""
         lowered_sentence = sentence.lower()
         filtered_symbols = re.sub("[!@#$?,:;.~%§><&]", "", lowered_sentence)
         filtered_junctions = re.sub(r"((\s|^)\w{1}\')|\-", " ", filtered_symbols)

@@ -14,7 +14,7 @@ def index():
 
 @app.route("/about")
 def about():
-    """Return the about file."""
+    """Return the about page of the application."""
     return render_template("about.html")
 
 

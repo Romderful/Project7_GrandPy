@@ -29,7 +29,7 @@ def test_catch_stopwords(words):
     [("Paris"), ("Toulouse"), ("Bordeaux")],
 )
 def test_catch_locations(words):
-    """Test if the function catch the stopwords."""
+    """Test if the function catch the places."""
     assert Parser.parse(words) == words.lower()
 
 

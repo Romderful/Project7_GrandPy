@@ -1,4 +1,4 @@
-"""App entry point."""
+"""App package."""
 
 
 import json
