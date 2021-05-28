@@ -21,7 +21,7 @@ from app.parser import Parser
 )
 def test_catch_stopwords(words):
     """Test if the function catch the stopwords."""
-    assert Parser.parse(words) == ""
+    assert Parser().parse(words) == ""
 
 
 @pytest.mark.parametrize(
@@ -30,7 +30,7 @@ def test_catch_stopwords(words):
 )
 def test_catch_locations(words):
     """Test if the function catch the places."""
-    assert Parser.parse(words) == words.lower()
+    assert Parser().parse(words) == words.lower()
 
 
 @pytest.mark.parametrize(
@@ -52,4 +52,4 @@ def test_catch_locations(words):
 )
 def test_parser_test_complete_sentences(sentence, expected):
     """Situationals tests."""
-    assert Parser.parse(sentence) == expected
+    assert Parser().parse(sentence) == expected

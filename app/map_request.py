@@ -4,6 +4,8 @@
 import requests
 
 
-def request_map(place):
+def get_coordinates(place):
     """Return a dict."""
-    pass
+    response = requests.get("")
+    data = response.json()
+    return data

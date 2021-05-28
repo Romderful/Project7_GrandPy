@@ -22,6 +22,10 @@ def about():
 def process():
     """Ajax request."""
     user_text = request.form["data"]
-    response = Parser.parse(user_text)
-    print(response)
-    return jsonify()
+    place = Parser().parse(user_text)
+    """
+    coordinates = HereAPI().get_coordinates(place)
+    wikitext = WikiAPI().get_wiki_text(coordinates)
+    """
+    print(place)
+    return jsonify("""coordinates, wikitext""")
