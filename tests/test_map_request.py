@@ -1,7 +1,7 @@
 """Tests of the application."""
 
 
-from app.map_request import get_coordinates
+from app.map_request import HereAPI
 
 
 def test_request_returns_correct_values(monkeypatch):
@@ -18,7 +18,7 @@ def test_request_returns_correct_values(monkeypatch):
             return items[0]
 
     monkeypatch.setattr("app.map_request.requests.get", FakeResponse)
-    result = get_coordinates("tour eiffel")
+    result = HereAPI().get_coordinates("tour eiffel")
 
     assert result["position"] == {"lat": 20, "lng": 30}
     assert result["title"] == "Tour Eiffel"

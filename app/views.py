@@ -4,6 +4,7 @@
 from . import app
 from flask import render_template, jsonify, request
 from .parser import Parser
+from .map_request import HereAPI
 
 
 @app.route("/")
@@ -23,9 +24,8 @@ def process():
     """Ajax request."""
     user_text = request.form["data"]
     place = Parser().parse(user_text)
-    """
-    coordinates = HereAPI().get_coordinates(place)
-    wikitext = WikiAPI().get_wiki_text(coordinates)
-    """
+    # coordinates = HereAPI().get_coordinates(place)
+    # wikitext = WikiAPI().get_wiki_text(coordinates)
     print(place)
-    return jsonify("""coordinates, wikitext""")
+    # print(coordinates)
+    return jsonify()  # Add coordinates / wikitext
