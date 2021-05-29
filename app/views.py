@@ -28,4 +28,4 @@ def process():
     # wikitext = WikiAPI().get_wiki_text(coordinates)
     print(place)
     print(coordinates)
-    return jsonify()  # Add coordinates / wikitext
+    return jsonify(coordinates)  # Add coordinates / wikitext
