@@ -20,4 +20,9 @@ class HereAPI:
         params = {"q": place, "apiKey": self.api_key}
         response = requests.get(url, params=params)
         data = response.json()
-        return data["items"][0]["position"]
+        try:
+            position = data["items"][0]["position"]
+        except (KeyError, IndexError):
+            print("A PROBLEM HAS OCCURED")
+        else:
+            return position
