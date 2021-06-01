@@ -1,6 +1,8 @@
 const userInput = $("#userInput");
 const chatZone = $("#chatZone");
 
+let mapIndex = 0;
+
 $("form").keypress(function (event) {
     const text = userInput.val();
     if (event.keyCode === 13) {
@@ -16,13 +18,13 @@ function sendUserInput(text) {
         url: "/process",
         data: { data: text },
         success: function (response) {
-            chatZone.append('<div id="map"></div>');
-            var platform = new H.service.Platform({
+            chatZone.append(`<div class="map" id="map${mapIndex}"></div>`);
+            let platform = new H.service.Platform({
                 apikey: "38g0LWQAVqN6jUp6xEEwQY9HTe2JF_GIr02m207HNYY"
             });
-            var defaultLayers = platform.createDefaultLayers();
+            let defaultLayers = platform.createDefaultLayers();
 
-            var map = new H.Map(document.getElementById('map'),
+            let map = new H.Map(document.getElementById(`map${mapIndex}`),
                 defaultLayers.vector.normal.map, {
                 center: { lat: 50, lng: 5 },
                 zoom: 4,
@@ -35,6 +37,8 @@ function sendUserInput(text) {
             H.ui.UI.createDefault(map, defaultLayers);
 
             moveMap(map, response);
+
+            mapIndex++;
         },
         error: function (error) {
             console.log(error);
