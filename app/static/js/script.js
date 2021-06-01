@@ -32,15 +32,13 @@ function createMap(coordinates, api_key) {
     });
     let defaultLayers = platform.createDefaultLayers();
     let map = new H.Map(document.getElementById(`map${mapIndex}`),
-        defaultLayers.vector.normal.map, {
-        center: { lat: 50, lng: 5 },
-        zoom: 4,
-        pixelRatio: window.devicePixelRatio || 1
+        defaultLayers.raster.normal.map, {
+        engineType: H.map.render.RenderEngine.EngineType.P2D
     });
     window.addEventListener('resize', () => map.getViewPort().resize());
     new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     H.ui.UI.createDefault(map, defaultLayers);
     map.setCenter(coordinates);
-    map.setZoom(14);
+    map.setZoom(10);
     mapIndex++;
 }
