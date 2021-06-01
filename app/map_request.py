@@ -12,7 +12,7 @@ class HereAPI:
     def __init__(self):
         """Initialise."""
         load_dotenv()
-        self.api_key = os.getenv("HERE_MAP_API_KEY")
+        self.api_key = os.getenv("HERE_REST_API_KEY")
 
     def get_coordinates(self, place):
         """Return a dict with the place coordinates."""

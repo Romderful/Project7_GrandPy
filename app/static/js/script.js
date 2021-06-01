@@ -16,9 +16,9 @@ function ajaxPost(text) {
         method: "POST",
         url: "/process",
         data: { data: text },
-        success: function (coordinates) {
+        success: function (response) {
             chatZone.append(`<div class="map" id="map${mapIndex}"></div>`);
-            createMap(coordinates);
+            createMap(response["coordinates"], response["here_js_api_key"]);
         },
         error: function (error) {
             console.log(error);
@@ -26,9 +26,9 @@ function ajaxPost(text) {
     })
 };
 
-function createMap(coordinates) {
+function createMap(coordinates, api_key) {
     let platform = new H.service.Platform({
-        apikey: "38g0LWQAVqN6jUp6xEEwQY9HTe2JF_GIr02m207HNYY"
+        apikey: api_key
     });
     let defaultLayers = platform.createDefaultLayers();
     let map = new H.Map(document.getElementById(`map${mapIndex}`),

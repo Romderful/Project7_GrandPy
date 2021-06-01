@@ -1,6 +1,8 @@
 """Views module."""
 
 
+import os
+from dotenv import load_dotenv
 from . import app
 from flask import render_template, jsonify, request
 from .parser import Parser
@@ -22,10 +24,12 @@ def about():
 @app.route("/process", methods=["POST"])
 def process():
     """Ajax request."""
+    load_dotenv()
+    HERE_JS_API_KEY = os.getenv("HERE_JS_API_KEY")
     user_text = request.form["data"]
     place = Parser().parse(user_text)
     coordinates = HereAPI().get_coordinates(place)
     # wikitext = WikiAPI().get_wiki_text(coordinates)
-    print(place)
-    print(coordinates)
-    return jsonify(coordinates)  # Add coordinates / wikitext
+    return jsonify(
+        {"here_js_api_key": HERE_JS_API_KEY, "coordinates": coordinates}
+    )  # Add coordinates / wikitext
