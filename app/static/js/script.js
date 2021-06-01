@@ -7,11 +7,11 @@ $("form").keypress(function (event) {
     if (event.keyCode === 13) {
         chatZone.append(`<p>${text}</p>`);
         userInput.val("");
-        sendUserInput(text);
+        ajaxPost(text);
     };
 });
 
-function sendUserInput(text) {
+function ajaxPost(text) {
     $.ajax({
         method: "POST",
         url: "/process",
