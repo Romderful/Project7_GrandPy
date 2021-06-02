@@ -11,7 +11,7 @@ class Parser:
 
     def __init__(self):
         """Initialize."""
-        words_path = Path().resolve() / "app" / "stopwords.json"
+        words_path = Path().resolve() / "app" / "static" / "stopwords.json"
         with open(words_path, encoding="utf-8") as data:
             self.stopwords = json.load(data)
 

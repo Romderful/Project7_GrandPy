@@ -1,7 +1,7 @@
 """Tests of the application."""
 
 
-from app.map_request import HereAPI
+from app.models.map_request import HereAPI
 
 
 def test_request_returns_correct_values(monkeypatch):

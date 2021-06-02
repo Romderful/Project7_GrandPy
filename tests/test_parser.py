@@ -2,7 +2,7 @@
 
 
 import pytest
-from app.parser import Parser
+from app.models.parser import Parser
 
 
 @pytest.mark.parametrize(

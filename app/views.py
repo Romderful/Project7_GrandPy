@@ -5,8 +5,8 @@ import os
 from dotenv import load_dotenv
 from . import app
 from flask import render_template, jsonify, request
-from .parser import Parser
-from .map_request import HereAPI
+from .models.parser import Parser
+from .models.map_request import HereAPI
 
 
 @app.route("/")
