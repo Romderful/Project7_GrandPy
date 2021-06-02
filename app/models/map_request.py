@@ -1,6 +1,7 @@
 """Requests the here map API."""
 
 
+import re
 import requests
 import os
 from dotenv import load_dotenv
@@ -20,5 +21,9 @@ class HereAPI:
         params = {"q": place, "apiKey": self.api_key}
         response = requests.get(url, params=params)
         data = response.json()
-        position = data["items"][0]["position"]
-        return position
+        try:
+            position = data["items"][0]["position"]
+        except (IndexError, KeyError):
+            return None
+        else:
+            return position

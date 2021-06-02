@@ -17,15 +17,16 @@ function ajaxPost(text) {
         url: "/process",
         data: { data: text },
         success: function (response) {
-            chatZone.append(`<div class="map" id="map${mapIndex}"></div>`);
-            createMap(response["coordinates"], response["here_js_api_key"]);
+            if (response["coordinates"]) {
+                chatZone.append(`<div class="map" id="map${mapIndex}"></div>`);
+                createMap(response["coordinates"], response["here_js_api_key"]);
+            } else {
+                chatZone.append(
+                    `<p>Oops, je n'ai rien trouvé, pourrais-tu essayer d'être plus précis s'il te plait ?
+                    C'est que je commence à me faire vieux.</p>`
+                )
+            };
         },
-        error: function () {
-            chatZone.append(
-                `<p>Oops, je n'ai rien trouvé, pourrais-tu essayer d'être plus précis s'il te plait ?
-                C'est que je commence à me faire vieux.</p>`
-            );
-        }
     })
 };
 

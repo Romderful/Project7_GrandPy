@@ -27,8 +27,8 @@ def process():
     load_dotenv()
     HERE_JS_API_KEY = os.getenv("HERE_JS_API_KEY")
     user_text = request.form["data"]
-    place = Parser().parse(user_text)
-    coordinates = HereAPI().get_coordinates(place)
+    position = Parser().parse(user_text)
+    coordinates = HereAPI().get_coordinates(position)
     # wikitext = WikiAPI().get_wiki_text(coordinates)
     return jsonify(
         {"here_js_api_key": HERE_JS_API_KEY, "coordinates": coordinates}
