@@ -20,16 +20,16 @@ html, body {
   margin-bottom: 130px;
 }
 
-.myTitle {
+.my-title {
   font-size: calc(1.295rem + 0.54vw);
 }
 @media (min-width: 1200px) {
-  .myTitle {
+  .my-title {
     font-size: 1.7rem;
   }
 }
 
-.myText {
+.my-text {
   font-size: 1rem;
 }
 
@@ -42,30 +42,25 @@ html, body {
   }
 }
 
-.myQuote {
-  font-size: 1rem;
-  margin-top: 100px;
-}
-
-.chatBox {
+.chat-box {
   max-width: 700px;
   margin-bottom: 130px;
 }
 
-.displayText {
+.display-text {
   height: 300px;
   overflow: auto;
 }
 
-.aboutMe {
+.about-me {
   text-align: center;
 }
 
-.footerIcons {
+.footer-icons {
   text-align: center;
 }
 
-.facebookButton {
+.facebook-button {
   margin: 4px;
 }
 
