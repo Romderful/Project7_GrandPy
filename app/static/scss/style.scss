@@ -22,11 +22,11 @@ html, body {
     margin-bottom: 130px;
 }
 
-.myTitle {
+.my-title {
     @include font-size(1.7rem);
 }
 
-.myText {
+.my-text {
     @include font-size(1rem);
 }
 
@@ -34,29 +34,24 @@ html, body {
     @include font-size(2rem);
 }
 
-.myQuote {
-    @include font-size(1rem);
-    margin-top: 100px;
-}
-
-.chatBox {
+.chat-box {
     max-width: 700px;
     margin-bottom: 130px;
 }
 
-.displayText {
+.display-text {
     height: 300px;
     overflow: auto;
 }
 
-.aboutMe {
+.about-me {
     text-align: center;
 }
 
-.footerIcons{
+.footer-icons{
     text-align: center;
 }
 
-.facebookButton {
+.facebook-button {
     margin: 4px;
 }

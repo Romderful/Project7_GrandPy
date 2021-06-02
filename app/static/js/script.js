@@ -1,5 +1,5 @@
-const userInput = $("#userInput");
-const chatZone = $("#chatZone");
+const userInput = $("#user-input");
+const chatZone = $("#chat-zone");
 let mapIndex = 0;
 
 $("form").keypress(function (event) {
@@ -20,8 +20,11 @@ function ajaxPost(text) {
             chatZone.append(`<div class="map" id="map${mapIndex}"></div>`);
             createMap(response["coordinates"], response["here_js_api_key"]);
         },
-        error: function (error) {
-            console.log(error);
+        error: function () {
+            chatZone.append(
+                `<p>Oops, je n'ai rien trouvé, pourrais-tu essayer d'être plus précis s'il te plait ?
+                C'est que je commence à me faire vieux.</p>`
+            );
         }
     })
 };
@@ -31,7 +34,7 @@ function createMap(coordinates, api_key) {
         apikey: api_key
     });
     let defaultLayers = platform.createDefaultLayers();
-    let map = new H.Map(document.getElementById(`map${mapIndex}`),
+    let map = new H.Map(document.querySelector(`#map${mapIndex}`),
         defaultLayers.raster.normal.map, {
         engineType: H.map.render.RenderEngine.EngineType.P2D
     });
