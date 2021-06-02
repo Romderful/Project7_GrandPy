@@ -17,6 +17,6 @@ def test_request_returns_correct_values(monkeypatch):
             items = [{"position": location}]
             return {"items": items}
 
-    monkeypatch.setattr("app.map_request.requests.get", FakeResponse)
+    monkeypatch.setattr("app.models.map_request.requests.get", FakeResponse)
     result = HereAPI().get_coordinates("tour eiffel")
     assert result == {"lat": 20, "lng": 30}
