@@ -5,9 +5,13 @@ let mapIndex = 0;
 $("form").keypress(function (event) {
     const text = userInput.val();
     if (event.keyCode === 13) {
-        chatZone.append(`<p>${text}</p>`);
-        userInput.val("");
-        ajaxPost(text);
+        if (text.length <= 1) {
+            userInput.val("");
+        } else {
+            chatZone.append(`<p class="user-text">${text}</p>`);
+            ajaxPost(text);
+            userInput.val("");
+        };
     };
 });
 
@@ -22,7 +26,7 @@ function ajaxPost(text) {
                 createMap(response["coordinates"], response["here_js_api_key"]);
             } else {
                 chatZone.append(
-                    `<p>Oops, je n'ai rien trouvé, pourrais-tu essayer d'être plus précis s'il te plait ?
+                    `<p class="bot-answer">Oops, je n'ai rien trouvé, pourrais-tu essayer d'être plus précis s'il te plait ?
                     C'est que je commence à me faire vieux.</p>`
                 )
             };
@@ -40,9 +44,11 @@ function createMap(coordinates, api_key) {
         engineType: H.map.render.RenderEngine.EngineType.P2D
     });
     window.addEventListener('resize', () => map.getViewPort().resize());
+    let marker = new H.map.Marker(coordinates);
     new H.mapevents.Behavior(new H.mapevents.MapEvents(map));
     H.ui.UI.createDefault(map, defaultLayers);
+    map.addObject(marker);
     map.setCenter(coordinates);
-    map.setZoom(10);
+    map.setZoom(12);
     mapIndex++;
 }
