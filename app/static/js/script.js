@@ -1,5 +1,5 @@
 const userInput = $("#user-input");
-const chatZone = $("#chat-zone");
+const chatZone = $(".chat-zone");
 let mapIndex = 0;
 
 $("form").keypress(function (event) {
