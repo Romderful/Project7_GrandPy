@@ -41,7 +41,8 @@ function createMap(coordinates, api_key) {
     let defaultLayers = platform.createDefaultLayers();
     let map = new H.Map(document.querySelector(`#map${mapIndex}`),
         defaultLayers.raster.normal.map, {
-        engineType: H.map.render.RenderEngine.EngineType.P2D
+        engineType: H.map.render.RenderEngine.EngineType.P2D,
+        pixelRatio: window.devicePixelRatio || 1
     });
     window.addEventListener('resize', () => map.getViewPort().resize());
     let marker = new H.map.Marker(coordinates);
