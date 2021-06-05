@@ -26,7 +26,7 @@ function ajaxPost(text) {
                 createMap(response["coordinates"], response["here_js_api_key"]);
             } else {
                 chatZone.append(
-                    `<p class="bot-answer">Je n'ai rien trouvé, pourrais-tu essayer d'être plus précis s'il te plait ?
+                    `<p class="bot-text">Je n'ai rien trouvé, pourrais-tu essayer d'être plus précis s'il te plait ?
                     C'est que je commence à me faire vieux.</p>`
                 )
             };
