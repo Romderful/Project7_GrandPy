@@ -4,8 +4,8 @@
 from app.models.map_request import HereAPI
 
 
-def test_request_returns_correct_values(monkeypatch):
-    """Test if the function catch the position and the title."""
+def test_request_returns_coordinates(monkeypatch):
+    """Test if the function catch the position."""
 
     class FakeResponse:
         def __init__(self, url, params=None):
