@@ -7,10 +7,13 @@ import requests
 class WikiAPI:
     """Class WikiAPI."""
 
-    @staticmethod
-    def get_page_id(lat, lng):
-        """Return a dict with the place coordinates."""
-        url = "http://fr.wikipedia.org/w/api.php"
+    def __init__(self):
+        """Initialise."""
+        self.title_url = "http://fr.wikipedia.org/w/api.php"
+        self.description_url = "https://fr.wikipedia.org/api/rest_v1/page/summary/"
+
+    def get_page_title(self, lat, lng):
+        """Return the place title."""
         params = {
             "action": "query",
             "list": "geosearch",
@@ -18,11 +21,23 @@ class WikiAPI:
             "gscoord": f"{lat}|{lng}",
             "format": "json",
         }
-        response = requests.get(url, params=params)
+        response = requests.get(self.title_url, params=params)
         data = response.json()
         try:
-            pageid = data["query"]["geosearch"][0]["pageid"]
+            page_title = data["query"]["geosearch"][0]["title"]
         except (IndexError, KeyError):
             return None
         else:
-            return pageid
+            return page_title
+
+    def get_page_description(self, title):
+        """Return the place title."""
+        url = self.description_url + title
+        response = requests.get(url)
+        data = response.json()
+        try:
+            page_description = data["extract"]
+        except (IndexError, KeyError):
+            return None
+        else:
+            return page_description

@@ -7,6 +7,7 @@ from . import app
 from flask import render_template, jsonify, request
 from .models.parser import Parser
 from .models.map_request import HereAPI
+from .models.wiki_request import WikiAPI
 
 
 @app.route("/")
@@ -29,7 +30,10 @@ def process():
     user_text = request.form["data"]
     position = Parser().parse(user_text)
     coordinates = HereAPI().get_coordinates(position)
-    # wikitext = WikiAPI().get_wiki_text(coordinates)
+    wiki_title = WikiAPI().get_page_title(coordinates["lat"], coordinates["lng"])
+    wiki_description = WikiAPI().get_page_description(wiki_title)
+    print(wiki_title)
+    print(wiki_description)
     return jsonify(
         {"here_js_api_key": HERE_JS_API_KEY, "coordinates": coordinates}
     )  # Add coordinates / wikitext

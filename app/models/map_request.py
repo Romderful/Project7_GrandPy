@@ -13,12 +13,12 @@ class HereAPI:
         """Initialise."""
         load_dotenv()
         self.api_key = os.getenv("HERE_REST_API_KEY")
+        self.url = "https://geocode.search.hereapi.com/v1/geocode"
 
     def get_coordinates(self, place):
         """Return a dict with the place coordinates."""
-        url = "https://geocode.search.hereapi.com/v1/geocode"
         params = {"q": place, "apiKey": self.api_key}
-        response = requests.get(url, params=params)
+        response = requests.get(self.url, params=params)
         data = response.json()
         try:
             coordinates = data["items"][0]["position"]
