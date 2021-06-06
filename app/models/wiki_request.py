@@ -2,6 +2,7 @@
 
 
 import requests
+import random
 
 
 class WikiAPI:
@@ -17,14 +18,15 @@ class WikiAPI:
         params = {
             "action": "query",
             "list": "geosearch",
-            "gsradius": "10000",
+            "gsradius": "1000",
             "gscoord": f"{lat}|{lng}",
             "format": "json",
         }
         response = requests.get(self.title_url, params=params)
         data = response.json()
         try:
-            page_title = data["query"]["geosearch"][0]["title"]
+            description_index = random.randrange(len(data["query"]["geosearch"]))
+            page_title = data["query"]["geosearch"][description_index]["title"]
         except (IndexError, KeyError):
             return None
         else:
