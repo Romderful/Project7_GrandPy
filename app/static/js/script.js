@@ -24,6 +24,8 @@ function ajaxPost(text) {
             if (response["coordinates"]) {
                 chatZone.append(`<div class="map" id="map${mapIndex}"></div>`);
                 createMap(response["coordinates"], response["here_js_api_key"]);
+                chatZone.append(
+                    `<p class="bot-text">${response["wiki_description"]}</p>`)
             } else {
                 chatZone.append(
                     `<p class="bot-text">Je n'ai rien trouvé, pourrais-tu essayer d'être plus précis s'il te plait ?

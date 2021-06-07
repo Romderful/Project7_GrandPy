@@ -22,7 +22,7 @@ def test_request_returns_title(monkeypatch):
 
 
 def test_request_returns_description(monkeypatch):
-    """Test if the function catch the page title."""
+    """Test if the function catch the page description."""
 
     class FakeResponse:
         def __init__(self, url, params=None):

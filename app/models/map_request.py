@@ -1,4 +1,4 @@
-"""Requests the here map API."""
+"""Request the here map API."""
 
 
 import requests

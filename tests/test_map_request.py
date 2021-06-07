@@ -12,7 +12,7 @@ def test_request_returns_coordinates(monkeypatch):
             pass
 
         def json(self):
-            """Return a fake json with the coordinates and the place title."""
+            """Return a fake json request."""
             location = {"lat": 20, "lng": 30}
             items = [{"position": location}]
             return {"items": items}

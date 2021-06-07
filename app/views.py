@@ -33,8 +33,16 @@ def process():
     if coordinates:
         wiki_title = WikiAPI().get_page_title(coordinates["lat"], coordinates["lng"])
         wiki_description = WikiAPI().get_page_description(wiki_title)
-        print(wiki_title)
-        print(wiki_description)
+        return jsonify(
+            {
+                "here_js_api_key": HERE_JS_API_KEY,
+                "coordinates": coordinates,
+                "wiki_description": wiki_description,
+            }
+        )
     return jsonify(
-        {"here_js_api_key": HERE_JS_API_KEY, "coordinates": coordinates}
-    )  # Add coordinates / wikitext
+        {
+            "here_js_api_key": HERE_JS_API_KEY,
+            "coordinates": coordinates,
+        }
+    )
