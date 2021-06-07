@@ -1,7 +1,6 @@
 """Request the wikipedia API."""
 
 
-import re
 import requests
 import random
 
