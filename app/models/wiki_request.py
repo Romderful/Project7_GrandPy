@@ -1,6 +1,7 @@
 """Request the wikipedia API."""
 
 
+import re
 import requests
 import random
 
@@ -27,15 +28,19 @@ class WikiAPI:
         try:
             title_index = random.randrange(len(data["query"]["geosearch"]))
             page_title = data["query"]["geosearch"][title_index]["title"]
-        except (IndexError, KeyError):
+        except ValueError:
             return None
         else:
             return page_title
 
     def get_page_description(self, title):
         """Return the place description."""
-        url = self.description_url + title
-        response = requests.get(url)
-        data = response.json()
-        page_description = data["extract"]
-        return page_description
+        try:
+            url = self.description_url + title
+            response = requests.get(url)
+            data = response.json()
+            page_description = data["extract"]
+        except TypeError:
+            return None
+        else:
+            return page_description
