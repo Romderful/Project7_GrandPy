@@ -34,5 +34,12 @@ def test_request_returns_description(monkeypatch):
             return {"extract": description}
 
     monkeypatch.setattr("app.models.wiki_request.requests.get", FakeResponse)
+    monkeypatch.setattr(
+        "app.models.wiki_request.random.choice",
+        lambda introduction: "Tiens, ça me rappel... ",
+    )
     result = WikiAPI().get_page_description("atur")
-    assert result == "Atur est une ancienne commune française située..."
+    assert (
+        result
+        == "Tiens, ça me rappel... Atur est une ancienne commune française située..."
+    )

@@ -12,6 +12,13 @@ class WikiAPI:
         """Initialise."""
         self.title_url = "http://fr.wikipedia.org/w/api.php"
         self.description_url = "https://fr.wikipedia.org/api/rest_v1/page/summary/"
+        self.introduction = [
+            "Tiens, ça me rappel un endroit ! ",
+            "Ah pas très loin d'ici, papi a vécu des choses ! ",
+            "Je connais un peu les alentours ! ",
+            "Papi a une histoire sur les environs ! ",
+            "Papi a quelques souvenirs de ce quartier. ",
+        ]
 
     def get_page_title(self, lat, lng):
         """Return the place title."""
@@ -42,4 +49,4 @@ class WikiAPI:
         except TypeError:
             return None
         else:
-            return page_description
+            return random.choice(self.introduction) + page_description
