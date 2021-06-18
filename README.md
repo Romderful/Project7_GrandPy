@@ -1,6 +1,6 @@
-# OpenFoodFacts - Openclassrooms project 5
+# GrandPy Bot - Openclassrooms project 7
 
-The idea of Pur Beurre is to create a program that interacts with the OpenFoodFacts database. This program makes it possible to recover food from the database of OpenFoodFacts, compare them and offer the user a healthier substitute to the food that he chose previously. : [link to github](https://github.com/Romderful/Project5_Openfoodfacts)
+This project is a web application that allows you to chat with a robot. This robot attempts to return the address or location given in the user message, as well as an anecdote of the surroundings.
 
 ## Installation
 
