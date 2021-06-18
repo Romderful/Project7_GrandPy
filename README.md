@@ -15,7 +15,7 @@ python -m venv .venv  # create the virtual environment
 . .venv/Scripts/activate  # activate the virtual environment
 pip install -r requirements.txt  # install the dependencies
 
-touch .env # create a file where you'll put your mysql server informations
+touch .env # create a file where you'll put your api keys
 
 HERE_REST_API_KEY="your_api_key"
 HERE_JS_API_KEY="your_api_key"
