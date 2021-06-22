@@ -3,7 +3,6 @@
 
 <head>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8">
     <link rel="icon" type="image/ico" href="static/icons/grandpy.ico" />
     <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
@@ -30,7 +29,7 @@
                 <img src="static/images/grandpy_01.png" height="75" class="d-inline-block" alt="">
                 GrandPy Bot !
             </a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".about-me"
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="about-me"
                 aria-controls="about-me" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -49,12 +48,10 @@
 
     <footer class="container-fluid bg-dark text-white mt-auto py-3 fixed-bottom">
         <div class="container footer-icons">
-            <a href="https://github.com"><button class="btn btn-secondary" type="button"><i
-                        class="bi bi-github"></i></button></a>
-            <a href="https://facebook.com"><button class="btn btn-secondary facebook-button" type="button"><i
-                        class="bi bi-facebook"></i></button></a>
-            <a href="https://linkedin.com"><button class="btn btn-secondary" type="button"><i
-                        class="bi bi-linkedin"></i></button></a>
+            <a href="https://github.com" class="btn btn-secondary" type="button"><i class="bi bi-github"></i></a>
+            <a href="https://facebook.com" class="btn btn-secondary facebook-button" type="button"><i
+                    class="bi bi-facebook"></i></a>
+            <a href="https://linkedin.com" class="btn btn-secondary" type="button"><i class="bi bi-linkedin"></i></a>
         </div>
         {% block footer %}{% endblock %}
     </footer>
